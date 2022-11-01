@@ -13,8 +13,12 @@ public class AutoProjectileAim : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D> ();
         target = FindClosestEnemy();
-        moveDirection = (target.transform.position - transform.position).normalized * speed;
-        rb.velocity = new Vector2 (moveDirection.x, moveDirection.y);
+        if(target != null){
+            moveDirection = (target.transform.position - transform.position).normalized * speed;
+            rb.velocity = new Vector2 (moveDirection.x, moveDirection.y);
+        }else{
+            Destroy (this.gameObject);
+        }
 
     }
 
