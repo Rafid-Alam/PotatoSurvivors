@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/PotatoSurvivors.Unity
+    guid: 32014c90c51f6b24d95065909771301b
   m_configObjects: {}
