@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class whip : MonoBehaviour
 {
+    /*
     [SerializeField] float timeToAttack = 4f;
     float timer;
     // Start is called before the first frame update
@@ -61,4 +62,5 @@ public class whip : MonoBehaviour
             }
         }
     }
+    */
 }
