@@ -7,7 +7,8 @@ public class SpawnEnemy1 : MonoBehaviour
     private GameObject player;
     public float SpawnTime = 1f;
     private float timer = 0f;
-    public GameObject Enemy1Prefab;
+    //public GameObject Enemy1Prefab;
+    public GameObject[] enemyPrefabs;
 
     void Start(){
         player = GameObject.Find("Hero");
@@ -19,7 +20,10 @@ public class SpawnEnemy1 : MonoBehaviour
          }else{
             timer = 0;
             //Spawn enemy
-            GameObject p = GameObject.Instantiate(Enemy1Prefab) as GameObject;
+            //GameObject p = GameObject.Instantiate(Enemy1Prefab) as GameObject;
+
+            int randEnemy = Random.Range(0, enemyPrefabs.Length);
+            GameObject p = GameObject.Instantiate(enemyPrefabs[randEnemy]) as GameObject;
             Vector2 playerPos = player.transform.position;
             float[] xRanges = {Random.Range(playerPos.x - 230, playerPos.x - 180), Random.Range(playerPos.x + 180, playerPos.x + 230)};
             float[] yRanges = {Random.Range(playerPos.x -120, playerPos.x - 80), Random.Range(playerPos.x + 120, playerPos.x + 80)};
