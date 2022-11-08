@@ -56,7 +56,6 @@ public class whip : MonoBehaviour
         if (col.gameObject.tag.Equals("Enemy1"))
         {
             Destroy(col.gameObject);
-            Destroy(this.gameObject);
         }
     }
 
