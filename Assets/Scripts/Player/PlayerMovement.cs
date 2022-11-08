@@ -5,7 +5,8 @@ public class PlayerMovement : MonoBehaviour
     // Player Stats
     public static float playerHealth = 10;
     public static float playerXP = 0;
-
+    public float lastHorizontalVector;
+    public float lastVerticalVector;
     public Animator animator;
     public Rigidbody2D rb;
     Vector2 movement;
@@ -21,6 +22,15 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if(movement.x != 0)
+        {
+            lastHorizontalVector = movement.x;
+        }
+        if (movement.y != 0)
+        {
+            lastVerticalVector = movement.y;
+        }
 
     }
 

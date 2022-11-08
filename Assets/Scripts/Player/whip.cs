@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class whip : MonoBehaviour
 {
-    /*
+    
     [SerializeField] float timeToAttack = 4f;
     float timer;
     // Start is called before the first frame update
@@ -12,14 +12,14 @@ public class whip : MonoBehaviour
     [SerializeField] GameObject leftWhipObject;
     [SerializeField] GameObject rightWhipObject;
 
-    PlayerMove playerMove;
+    PlayerMovement playerMove;
     [SerializeField] Vector2 whipAttackSize = new Vector2(4f, 2f);
 
     [SerializeField] int whipDamage = 1;
-
-    private void Awake()
+    void Awake()
     {
-        playerMove = GetComponentInParent<PlayerMove>();
+
+        playerMove = GetComponentInParent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -29,6 +29,7 @@ public class whip : MonoBehaviour
         if (timer <= 0f)
         {
             Attack();
+
         }
     }
 
@@ -41,26 +42,23 @@ public class whip : MonoBehaviour
             {
                 rightWhipObject.SetActive(true);
                 Collider2D[] colliders = Physics2D.OverlapBoxAll(rightWhipObject.transform.position, whipAttackSize, 0f);
-                ApplyDamage(colliders);
             }
             else
             {
                 leftWhipObject.SetActive(true);
                 Collider2D[] colliders = Physics2D.OverlapBoxAll(leftWhipObject.transform.position, whipAttackSize, 0f);
-                ApplyDamage(colliders);
             }
         }
 
-    private void ApplyDamage(Collider2D[] colliders)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        for (int i = 0; i <colliders.Length; i++)
+
+        if (col.gameObject.tag.Equals("Enemy1"))
         {
-            Enemy1Movement e = colliders[i].GetComponent<Enemy1Movement>();
-            if (e != null)
-            {
-                colliders[i].GetComponent<Enemy1Movement>().TakeDamage(whipDamage);
-            }
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
         }
     }
-    */
+
+    
 }
