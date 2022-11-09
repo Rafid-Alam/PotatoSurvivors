@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     // Start is called before the first frame update
     public Slider Slider; 
@@ -18,19 +18,19 @@ public class PlayerHealth : MonoBehaviour
     {
         health = maxHealth;
         SetHealth(health, maxHealth);
-        Slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(Low, High, Slider.normalizedValue);
+        //Slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(Low, High, Slider.normalizedValue);
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetHealth(health, maxHealth);
+        //SetHealth(health, maxHealth);
         Slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
     }
 
     public void SetHealth(float health, float maxHealth)
     {
-        Slider.gameObject.SetActive(health <= maxHealth);
+        Slider.gameObject.SetActive(health < maxHealth);
         Slider.value = health;
         Slider.maxValue = maxHealth;
 
@@ -38,11 +38,12 @@ public class PlayerHealth : MonoBehaviour
         Color.Lerp(Low, High, Slider.normalizedValue);
         if(health <= 0){
             //Game Over
+            //Destroy (this.gameObject);
         }
     }
     public void damage(float damage)
     {
-        Slider.gameObject.SetActive(health <= maxHealth);
+        Slider.gameObject.SetActive(health < maxHealth);
         health -= damage;
         Slider.value = health;
 
@@ -50,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
         Color.Lerp(Low, High, Slider.normalizedValue);
         if(health <= 0){
             //Game Over
+            //Destroy (this.gameObject);
         }
     }
 }

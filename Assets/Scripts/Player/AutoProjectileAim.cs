@@ -8,6 +8,7 @@ public class AutoProjectileAim : MonoBehaviour
     Rigidbody2D rb;
     Vector2 moveDirection;
     GameObject target = null;
+    public float damage = 50f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +31,16 @@ public class AutoProjectileAim : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D col){
         if(col.gameObject.tag.Equals("Enemy1")){
-            Destroy (col.gameObject);
-            Destroy (this.gameObject);
+            //Destroy (col.gameObject);
+            //col.GetComponent<EnemyStats>.damage(damage);
+            EnemyStats enemy = col.transform.GetComponent<EnemyStats>();
+            if(enemy != null){
+                enemy.damage(damage);
+                //if(!piercing)
+                Destroy(this.gameObject);
+            }else{
+                //Destroy (col.gameObject);
+            }
         }
     }
 
