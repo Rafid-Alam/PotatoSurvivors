@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flying_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3947892202478641689, guid: 6cdf390dc6e488742b843712f9e49740, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4203198722812927776, guid: 6cdf390dc6e488742b843712f9e49740, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -340,6 +344,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203347995}
   m_CullTransparentMesh: 1
+--- !u!1 &231292991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4803843114193518451, guid: 187de85645daba241a80648a2d74ae23, type: 3}
+  m_PrefabInstance: {fileID: 1308513292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &231292992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231292991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920f841c5bf3e2c499706da7ad085970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 100
+  HealthBar: {fileID: 0}
 --- !u!1 &238370315
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +552,26 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &364980706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4843630945662551183, guid: 743b4e291975ef14fb810a38fc638c44, type: 3}
+  m_PrefabInstance: {fileID: 1195403995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &364980707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364980706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920f841c5bf3e2c499706da7ad085970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 100
+  HealthBar: {fileID: 0}
 --- !u!1 &452547598
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +700,7 @@ GameObject:
   - component: {fileID: 624247072}
   - component: {fileID: 624247073}
   - component: {fileID: 624247074}
+  - component: {fileID: 624247075}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -796,7 +841,7 @@ MonoBehaviour:
   animator: {fileID: 624247074}
   rb: {fileID: 624247068}
   jumpKey: 0
-  speed: 10
+  speed: 20
 --- !u!114 &624247073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1357139343179419001, guid: f267f3f2c028df34a80d5f819a4359cb, type: 3}
-  fireRate: 2
+  fireRate: 1
   nextFire: 0
 --- !u!95 &624247074
 Animator:
@@ -832,6 +877,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &624247075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624247065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f089bc046d114d94c914c98296194829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 100
+  HealthBar: {fileID: 1282674144}
 --- !u!1 &745186243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20998f032405d3d4e83457e3d5ab72be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnTime: 1
+  SpawnTime: 0.25
   enemyPrefabs:
   - {fileID: 3913054912398033889, guid: 6cdf390dc6e488742b843712f9e49740, type: 3}
   - {fileID: 4803843114193518451, guid: 187de85645daba241a80648a2d74ae23, type: 3}
@@ -1815,6 +1875,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1545048378450278110, guid: 743b4e291975ef14fb810a38fc638c44, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4843630945662551183, guid: 743b4e291975ef14fb810a38fc638c44, type: 3}
       propertyPath: m_Name
       value: Mushroom_Enemy
@@ -1974,6 +2038,26 @@ RectTransform:
   m_AnchoredPosition: {x: -2.559451, y: -2.1116173}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1215623773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3913054912398033889, guid: 6cdf390dc6e488742b843712f9e49740, type: 3}
+  m_PrefabInstance: {fileID: 175973402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1215623774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215623773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920f841c5bf3e2c499706da7ad085970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 100
+  HealthBar: {fileID: 0}
 --- !u!1 &1236419733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,7 +2206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 0.5
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -2231,7 +2315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7046566045876197668, guid: 187de85645daba241a80648a2d74ae23, type: 3}
       propertyPath: speed
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 187de85645daba241a80648a2d74ae23, type: 3}
