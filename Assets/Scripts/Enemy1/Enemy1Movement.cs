@@ -7,6 +7,7 @@ public class Enemy1Movement : MonoBehaviour
     private GameObject player;
     public float speed = 5f;
     public bool flip;
+    public float damage = 5f;
     void Start()
     {
         player = GameObject.Find("Hero");
@@ -34,6 +35,14 @@ public class Enemy1Movement : MonoBehaviour
         // Different enemies will deal different damage
         if(col.gameObject.name == "Hero"){
             PlayerMovement.playerHealth -= 0.5f;
+            PlayerStats playerHealth = col.transform.GetComponent<PlayerStats>();
+            if(playerHealth != null){
+                playerHealth.damage(damage);
+                //if(!piercing)
+                Destroy(this.gameObject);
+            }else{
+                //Destroy (col.gameObject);
+            }
         }
     }
 

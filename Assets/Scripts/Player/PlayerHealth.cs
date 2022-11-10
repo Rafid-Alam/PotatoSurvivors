@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetHealth(health, maxHealth);
+        //SetHealth(health, maxHealth);
         Slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
     }
 
