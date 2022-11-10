@@ -13,7 +13,7 @@ public class EnemyStats : MonoBehaviour
         health = maxHealth;
         //HealthBar = GetComponent<EnemyHealth>();
         //HealthBar = transform.GetComponentInChildren<EnemyHealth>();
-        HealthBar.SetHealth(health,maxHealth);
+        //HealthBar.SetHealth(health,maxHealth);
     }
 
     // Update is called once per frame
