@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/PotatoSurvivors.Unity
+    path: Assets/Main Menu.unity
+    guid: 77bd870812a74644f8ca199c9a4fbd29
+  - enabled: 1
+    path: Assets/Game.Unity
     guid: 32014c90c51f6b24d95065909771301b
+  - enabled: 1
+    path: Assets/GameOver.unity
+    guid: 4b8d59ef23c4e8b4587ac1740c996675
   m_configObjects: {}
