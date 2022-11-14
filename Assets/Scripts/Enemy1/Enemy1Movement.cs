@@ -34,7 +34,6 @@ public class Enemy1Movement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col){
         // Different enemies will deal different damage
         if(col.gameObject.name == "Hero"){
-            PlayerMovement.playerHealth -= 0.5f;
             PlayerStats playerHealth = col.transform.GetComponent<PlayerStats>();
             if(playerHealth != null){
                 playerHealth.damage(damage);

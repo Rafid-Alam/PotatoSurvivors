@@ -7,16 +7,11 @@ public class EnemyStats : MonoBehaviour
     public float maxHealth = 100;
     public float health = 100;
     public EnemyHealth HealthBar;
-    // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
-        //HealthBar = GetComponent<EnemyHealth>();
-        //HealthBar = transform.GetComponentInChildren<EnemyHealth>();
-        //HealthBar.SetHealth(health,maxHealth);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -28,7 +23,11 @@ public class EnemyStats : MonoBehaviour
         HealthBar.SetHealth(health, maxHealth);
 
         if(health <= 0){
-            //Game Over
+            // Add xp drop
+            // 20% change of dropping xp 
+            // Instantiate xp prefab
+
+
             Destroy (this.gameObject);
         }
         
