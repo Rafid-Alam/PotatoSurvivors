@@ -27,7 +27,7 @@ public class EnemyStats : MonoBehaviour
             // 20% change of dropping xp 
             // Instantiate xp prefab
 
-
+            PlayerStats.enemiesKilled++;
             Destroy (this.gameObject);
         }
         
