@@ -37,10 +37,8 @@ public class Enemy1Movement : MonoBehaviour
             PlayerStats playerHealth = col.transform.GetComponent<PlayerStats>();
             if(playerHealth != null){
                 playerHealth.damage(damage);
-                //if(!piercing)
+                PlayerStats.enemiesKilled++;
                 Destroy(this.gameObject);
-            }else{
-                //Destroy (col.gameObject);
             }
         }
     }

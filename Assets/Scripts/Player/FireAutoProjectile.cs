@@ -7,7 +7,8 @@ public class FireAutoProjectile : MonoBehaviour
     [SerializeField] GameObject bullet;
     public float fireRate = 1f;
     public float nextFire = 0f;
-    // Start is called before the first frame update
+    //public static int projectiles; add to shoot multiple projectiles
+
     void Start()
     {
         nextFire = Time.time;
@@ -17,7 +18,7 @@ public class FireAutoProjectile : MonoBehaviour
     void Update()
     {
         if(Time.time > nextFire){
-            Instantiate (bullet, transform.position, Quaternion.identity);
+            Instantiate(bullet, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
     }

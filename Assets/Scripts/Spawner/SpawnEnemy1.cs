@@ -5,23 +5,18 @@ using UnityEngine;
 public class SpawnEnemy1 : MonoBehaviour
 {
     private GameObject player;
-    public float SpawnTime = 1f;
-    private float timer = 0f;
+    private float nextSpawnTime;
+    public static float spawnCooldown = 2f;
     //public GameObject Enemy1Prefab;
     public GameObject[] enemyPrefabs;
 
     void Start(){
         player = GameObject.Find("Hero");
+        nextSpawnTime = 0;
     }
 
     void Update(){
-         if(timer <= SpawnTime){
-            timer += Time.deltaTime;
-         }else{
-            timer = 0;
-            //Spawn enemy
-            //GameObject p = GameObject.Instantiate(Enemy1Prefab) as GameObject;
-
+        if(Time.time > nextSpawnTime){
             int randEnemy = Random.Range(0, enemyPrefabs.Length);
             GameObject p = GameObject.Instantiate(enemyPrefabs[randEnemy]) as GameObject;
             Vector2 playerPos = player.transform.position;
@@ -30,6 +25,8 @@ public class SpawnEnemy1 : MonoBehaviour
             float x = xRanges[Random.Range(0,2)];
             float y = yRanges[Random.Range(0,2)];
             p.transform.position = new Vector3(x, y, 0f);
-         }
+
+            nextSpawnTime = Time.time + spawnCooldown; // sets cooldown until next spawn
+        }
     }
 }

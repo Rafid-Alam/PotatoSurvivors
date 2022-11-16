@@ -20,12 +20,15 @@ public class EnemyStats : MonoBehaviour
     public void damage(float damage)
     {
         health -= damage;
-        HealthBar.SetHealth(health, maxHealth);
+        if(HealthBar != null) HealthBar.SetHealth(health, maxHealth);
 
         if(health <= 0){
-            // Add xp drop
-            // 20% change of dropping xp 
-            // Instantiate xp prefab
+            int chance = Random.Range(1, 3);
+            if(chance == 1){
+                GameObject e = Instantiate(Resources.Load("Prefabs/fries") as GameObject);
+                e.transform.position = transform.position;
+                e.name = "fries";
+            }
 
             PlayerStats.enemiesKilled++;
             Destroy (this.gameObject);

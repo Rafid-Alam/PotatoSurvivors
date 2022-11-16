@@ -36,10 +36,6 @@ public class EnemyHealth : MonoBehaviour
 
         Slider.fillRect.GetComponentInChildren<Image>().color = 
         Color.Lerp(Low, High, Slider.normalizedValue);
-        if(health <= 0){
-            //Game Over
-            //Destroy (this.gameObject);
-        }
     }
     public void damage(float damage)
     {
