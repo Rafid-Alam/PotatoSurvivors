@@ -8,10 +8,11 @@ public class AutoProjectileAim : MonoBehaviour
     Rigidbody2D rb;
     Vector2 moveDirection;
     GameObject target = null;
-    public float damage = 50f;
+    public static float damage;
     // Start is called before the first frame update
     void Start()
     {
+        damage = 50f;
         rb = GetComponent<Rigidbody2D> ();
         target = FindClosestEnemy();
         if(target != null){

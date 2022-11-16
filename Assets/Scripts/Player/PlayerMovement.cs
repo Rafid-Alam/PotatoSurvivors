@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Player Stats
-    public static float playerXP = 0;
     public float lastHorizontalVector;
     public float lastVerticalVector;
     public Animator animator;
@@ -11,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
 
     public KeyCode jumpKey;
-    public float speed = 10f;
+    public float speed = 20f;
     
     void Update()
     {
@@ -36,5 +35,5 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-    }
+    }    
 }
