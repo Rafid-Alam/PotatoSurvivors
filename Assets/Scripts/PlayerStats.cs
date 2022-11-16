@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
     public static float playerXP;
     public static float xpNeeded;
     public static float level;
+    public Animator animator;
     
     void Start()
     {
@@ -60,9 +61,12 @@ public class PlayerStats : MonoBehaviour
         if(health <= 0){
             //Game Over
             //Destroy (this.gameObject);
+            //Destroy(this.gameObject, 2f);
+            //animator.Play("Player_death");
+                
             SceneManager.LoadScene("GameOver");
         }
-        
+
     }
 
     void OnTriggerEnter2D(Collider2D col){
