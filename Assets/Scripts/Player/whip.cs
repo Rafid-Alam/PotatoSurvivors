@@ -15,7 +15,7 @@ public class whip : MonoBehaviour
     PlayerMovement playerMove;
     [SerializeField] Vector2 whipAttackSize = new Vector2(4f, 2f);
 
-    [SerializeField] int whipDamage = 1;
+    [SerializeField] float damage = 50f;
     void Awake()
     {
 
@@ -42,22 +42,27 @@ public class whip : MonoBehaviour
             {
                 rightWhipObject.SetActive(true);
                 Collider2D[] colliders = Physics2D.OverlapBoxAll(rightWhipObject.transform.position, whipAttackSize, 0f);
+                ApplyDamage(colliders);
             }
             else
             {
                 leftWhipObject.SetActive(true);
                 Collider2D[] colliders = Physics2D.OverlapBoxAll(leftWhipObject.transform.position, whipAttackSize, 0f);
+            ApplyDamage(colliders);
             }
         }
 
-    void OnTriggerEnter2D(Collider2D col)
+    private void ApplyDamage(Collider2D[] colliders)
     {
-
-        if (col.gameObject.tag.Equals("Enemy1"))
+        for (int i =0; i < colliders.Length; i++)
         {
-            Destroy(col.gameObject);
+            EnemyStats e = colliders[i].GetComponent<EnemyStats>();
+            if (e!= null)
+            {
+                colliders[i].GetComponent<EnemyStats>().damage(damage);
+            }
         }
     }
 
-    
+
 }
