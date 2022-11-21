@@ -6,7 +6,7 @@ public class SpawnEnemy1 : MonoBehaviour
 {
     private GameObject player;
     private float nextSpawnTime;
-    public static float spawnCooldown = 2f;
+    public static float spawnCooldown = 1.5f;
     //public GameObject Enemy1Prefab;
     public GameObject[] enemyPrefabs;
 
