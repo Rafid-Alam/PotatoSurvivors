@@ -41,7 +41,10 @@ public class PlayerStats : MonoBehaviour
         currentTime = 0f;
         brocCollected = 0;
         friesCollected = 0;
-        HealthBar.SetHealth(health,maxHealth);
+        HealthBar = GetComponentInChildren<PlayerHealth>();
+        if(HealthBar != null){
+            HealthBar.SetHealth(health,maxHealth);
+        }
 
         // UI elements 
         killCount = GetComponent<TextMeshProUGUI>();

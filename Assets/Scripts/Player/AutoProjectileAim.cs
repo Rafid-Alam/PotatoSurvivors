@@ -8,7 +8,7 @@ public class AutoProjectileAim : MonoBehaviour
     Rigidbody2D rb;
     Vector2 moveDirection;
     GameObject target = null;
-    public static float damage;
+    public static float damage = 50;
     // Start is called before the first frame update
     void Start()
     {

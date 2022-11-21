@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     {
         health = maxHealth;
         SetHealth(health, maxHealth);
-        //Slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(Low, High, Slider.normalizedValue);
+        Slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(Low, High, Slider.normalizedValue);
     }
 
     // Update is called once per frame
@@ -31,8 +31,8 @@ public class PlayerHealth : MonoBehaviour
     public void SetHealth(float health, float maxHealth)
     {
         //Slider.gameObject.SetActive(health <= maxHealth);
-        Slider.value = health;
         Slider.maxValue = maxHealth;
+        Slider.value = health;
 
         Slider.fillRect.GetComponentInChildren<Image>().color = 
         Color.Lerp(Low, High, Slider.normalizedValue);
