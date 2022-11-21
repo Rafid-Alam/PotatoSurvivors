@@ -23,11 +23,20 @@ public class EnemyStats : MonoBehaviour
         if(HealthBar != null) HealthBar.SetHealth(health, maxHealth);
 
         if(health <= 0){
-            int chance = Random.Range(1, 3);
-            if(chance == 1){
-                GameObject e = Instantiate(Resources.Load("Prefabs/fries") as GameObject);
+
+            // chance of getting health as a drop
+            int healthChance = Random.Range(0,10);
+            if(healthChance == 1){
+                GameObject e = Instantiate(Resources.Load("Prefabs/broc") as GameObject);
                 e.transform.position = transform.position;
-                e.name = "fries";
+                e.name = "broc";
+            }else{
+                int chance = Random.Range(1, 3);
+                if(chance == 1){
+                    GameObject e = Instantiate(Resources.Load("Prefabs/fries") as GameObject);
+                    e.transform.position = transform.position;
+                    e.name = "fries";
+                }
             }
 
             PlayerStats.enemiesKilled++;
