@@ -7,12 +7,12 @@ public class KnifeProjectile : MonoBehaviour
     public float speed = 50f;
     Rigidbody2D rb;
     Vector3 moveDirection;
-    GameObject target = null;
-    public static float damage = 50;
+    //GameObject target = null;
+    public static float damage = 20;
     // Start is called before the first frame update
     void Start()
     {
-        damage = 50f;
+        //damage = 50f;
         rb = GetComponent<Rigidbody2D> ();
     }
 

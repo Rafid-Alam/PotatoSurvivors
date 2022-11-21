@@ -10,6 +10,10 @@ public class EnemyStats : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        HealthBar = GetComponentInChildren<EnemyHealth>();
+        if(HealthBar != null){
+            HealthBar.SetHealth(health,maxHealth);
+        }
     }
 
     void Update()

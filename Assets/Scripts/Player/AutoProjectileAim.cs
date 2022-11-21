@@ -12,7 +12,7 @@ public class AutoProjectileAim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damage = 50f;
+        //damage = 50f;
         rb = GetComponent<Rigidbody2D> ();
         target = FindClosestEnemy();
         if(target != null){
