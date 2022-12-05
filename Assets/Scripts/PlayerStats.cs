@@ -11,11 +11,11 @@ public class PlayerStats : MonoBehaviour
     // UI elements
     public PlayerHealth HealthBar;
     public Slider xpBar;
-    [SerializeField] private TextMeshProUGUI killCount;
-    [SerializeField] private TextMeshProUGUI levelDisplay;
-    [SerializeField] private TextMeshProUGUI timer;
-    [SerializeField] private TextMeshProUGUI scoreLabel;
-    [SerializeField] private TextMeshProUGUI maxScoreLabel;
+    [SerializeField] private TMP_Text killCount;
+    [SerializeField] private TMP_Text levelDisplay;
+    [SerializeField] private TMP_Text timer;
+    [SerializeField] private TMP_Text scoreLabel;
+    [SerializeField] private TMP_Text maxScoreLabel;
     public Animator animator;
 
     public float currentTime;
@@ -45,13 +45,6 @@ public class PlayerStats : MonoBehaviour
         if(HealthBar != null){
             HealthBar.SetHealth(health,maxHealth);
         }
-
-        // UI elements 
-        killCount = GetComponent<TextMeshProUGUI>();
-        levelDisplay = GetComponent<TextMeshProUGUI>();
-        timer = GetComponent<TextMeshProUGUI>();
-        scoreLabel = GetComponent<TextMeshProUGUI>();
-        maxScoreLabel = GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
