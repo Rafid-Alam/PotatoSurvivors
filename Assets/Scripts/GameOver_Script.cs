@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameOver_Script : MonoBehaviour
 {
     public Text pointsText;
-
+    
     public void Setup(int score)
     {
         gameObject.SetActive(true);

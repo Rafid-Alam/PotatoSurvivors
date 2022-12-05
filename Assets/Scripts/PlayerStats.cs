@@ -50,7 +50,7 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         // Score Calculation
-        score = (friesCollected * 500) + (enemiesKilled * 200) + (brocCollected * 300);
+        score = (friesCollected * 50) + (enemiesKilled * 20) + (brocCollected * 30);
 
         // Level up 
         if(playerXP >= xpNeeded){
@@ -59,13 +59,10 @@ public class PlayerStats : MonoBehaviour
             SpawnEnemy1.spawnCooldown *= 0.8f; // cooldown gets smaller every level up
             level++;
 
-            // level up options - Weapon ideas
-            // splash damage ability - cooking oil
-            // rotating pot - similar to the bible from vampire survivors
-            // Healing - ability heals over time
-            // Throwing knife that follow mouse
-            // Something like onion in vampire survivors
-            AutoProjectileAim.damage *= 1.5f;
+            // Level up function
+             // this will make level up menu pop-up
+            LevelUp.leveled = true;
+            LevelUp.lvlPoints++;
         }
 
         // Updates time

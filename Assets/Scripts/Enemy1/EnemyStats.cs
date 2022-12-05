@@ -29,7 +29,7 @@ public class EnemyStats : MonoBehaviour
         if(health <= 0){
 
             // chance of getting health as a drop
-            int healthChance = Random.Range(0,10);
+            int healthChance = Random.Range(0,13);
             if(healthChance == 1){
                 GameObject e = Instantiate(Resources.Load("Prefabs/broc") as GameObject);
                 e.transform.position = transform.position;
