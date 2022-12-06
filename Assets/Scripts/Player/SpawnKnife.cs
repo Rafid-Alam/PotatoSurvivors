@@ -31,6 +31,6 @@ public class SpawnKnife : MonoBehaviour
         //
         GameObject thrownKnife = Instantiate(Knife);
         thrownKnife.transform.position = transform.position;
-        thrownKnife.GetComponent<KnifeProjectile>().SetDirection(playerMove.lastHorizontalVector, 0f);
+        thrownKnife.GetComponent<KnifeProjectile>().SetDirection(playerMove.lastHorizontalVector, playerMove.lastVerticalVector);
     }
 }

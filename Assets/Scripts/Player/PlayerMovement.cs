@@ -21,12 +21,18 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
+        if(movement.x != 0 && movement.y != 0){
+            lastHorizontalVector = movement.x;
+            lastVerticalVector = movement.y;
+        }
         if(movement.x != 0)
         {
             lastHorizontalVector = movement.x;
+            lastVerticalVector = movement.y;
         }
         if (movement.y != 0)
         {
+            lastHorizontalVector = movement.x;
             lastVerticalVector = movement.y;
         }
 

@@ -38,7 +38,7 @@ public class KnifeProjectile : MonoBehaviour
     }
 
     public void SetDirection(float x, float y){
-        if(x!=0){
+        if(x!=0 || y!=0){
             moveDirection = new Vector3(x,y);
         }else{
             moveDirection = new Vector3(1f,y);
@@ -47,6 +47,21 @@ public class KnifeProjectile : MonoBehaviour
             Vector3 scale = transform.localScale;
             scale.x *= -1;
             transform.localScale = scale;
+            if(y != 0){
+                Vector3 newRotation = new Vector3(0,0,-45*y);
+                transform.eulerAngles = newRotation;
+            }
+        }
+        else if(x > 0 && y!= 0){
+            Vector3 newRotation = new Vector3(0,0,45*y);
+                transform.eulerAngles = newRotation;
+        }
+        else if(y != 0){
+            //Quaternion rotation = transform.rotation;
+            //rotation.y = 15 * y;
+            //transform.rotation = rotation;
+            Vector3 newRotation = new Vector3(0,0,90*y);
+            transform.eulerAngles = newRotation;
         }
     }
 
