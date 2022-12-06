@@ -3260,7 +3260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2943167878904109034, guid: a1aea6ba8e308e14ba2e689d27b3a8b6, type: 3}
       propertyPath: playerTilePosition.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2943167878904109034, guid: a1aea6ba8e308e14ba2e689d27b3a8b6, type: 3}
       propertyPath: terrainTileVerticalCount
