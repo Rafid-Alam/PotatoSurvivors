@@ -35,12 +35,9 @@ public class EnemyStats : MonoBehaviour
                 e.transform.position = transform.position;
                 e.name = "broc";
             }else{
-                int chance = Random.Range(1, 3);
-                if(chance == 1){
-                    GameObject e = Instantiate(Resources.Load("Prefabs/fries") as GameObject);
-                    e.transform.position = transform.position;
-                    e.name = "fries";
-                }
+                GameObject e = Instantiate(Resources.Load("Prefabs/fries") as GameObject);
+                e.transform.position = transform.position;
+                e.name = "fries";
             }
 
             PlayerStats.enemiesKilled++;

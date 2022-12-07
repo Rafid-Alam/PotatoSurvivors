@@ -33,7 +33,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        LevelUp.lvlPoints = 10;
+        LevelUp.lvlPoints = 0;
         score = 0;
         timeDiff = 30;
         health = 100;
