@@ -46,5 +46,12 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-    }    
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(gameObject.CompareTag("obstacles"))
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+    }
 }

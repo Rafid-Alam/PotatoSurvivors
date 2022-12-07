@@ -60,14 +60,11 @@ public class WorldScrolling2 : MonoBehaviour
                 //Debug.Log("tileToUpdate_x" + tileToUpdate_x + "tileToUpdate_y" + tileToUpdate_y);
 
                 GameObject tile = terrainTiles[tileToUpdate_x, tileToUpdate_y];
-                Vector3 newPosition = CalculatTilePosition(
+                tile.transform.position = CalculatTilePosition(
                     playerTilePosition.x + pov_x,
                     playerTilePosition.y + pov_y
                     );
-                if(newPosition != tile.transform.position)
-                {
-                    tile.transform.position = newPosition;
-                }
+                
             }
         }
     }
