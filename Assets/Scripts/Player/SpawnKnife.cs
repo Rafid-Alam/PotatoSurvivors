@@ -13,7 +13,7 @@ public class SpawnKnife : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        knifeLevel = 1;
+        knifeLevel = 0;
         timeToAttack = 0.8f;
         playerMove = GetComponentInParent<PlayerMovement>();
     }

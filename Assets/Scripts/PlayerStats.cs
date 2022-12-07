@@ -21,8 +21,8 @@ public class PlayerStats : MonoBehaviour
     public float currentTime;
     private int score;
     public static int maxScore = 0;
-    public static float maxHealth = 100;
-    public float health = 100;
+    public static float maxHealth;
+    public float health;
     public static int enemiesKilled;
     public static float playerXP;
     public static float xpNeeded;
