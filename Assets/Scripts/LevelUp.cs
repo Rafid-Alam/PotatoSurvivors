@@ -21,7 +21,6 @@ public class LevelUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lvlPoints = 0;
         LevelMenuActive = false;
     }
 
@@ -39,7 +38,7 @@ public class LevelUp : MonoBehaviour
             LevelMenuActive = false;
         }
 
-        pointsLabel.text = "Points: " + lvlPoints;
+        if(pointsLabel != null) pointsLabel.text = "Points: " + lvlPoints;
     }
 
     public void Resume()
@@ -56,34 +55,46 @@ public class LevelUp : MonoBehaviour
 
 
     // Handles different buttons to upgrade
-    void hatUpgrade(){
+    public void hatUpgrade(){
+        if(!validatePoints()) return;
 
+
+        lvlPoints--;
     }
 
-    void knifeUpgrade(){
+    public void knifeUpgrade(){
+        if(!validatePoints()) return;
 
+        lvlPoints--;
     }
 
-    void bombUpgrade(){
+    public void bombUpgrade(){  
+        if(!validatePoints()) return;
 
+        lvlPoints--;
     }
 
-    void healingUpgrade(){
+    public void healingUpgrade(){
+        if(!validatePoints()) return;
 
+        lvlPoints--;
     }
 
-    void healthUpgrade(){
-        PlayerStats.maxHealth *= 1.25f;
+    public void healthUpgrade(){
+        if(!validatePoints()) return;
 
-        if(lvlPoints > 0){
-            lvlPoints--;
-        }
+        PlayerStats.maxHealth *= 1.15f;
+        lvlPoints--;
     }
 
-    void speedUpgrade(){
-        PlayerMovement.speed *= 1.05f;
-        if(lvlPoints > 0){
-            lvlPoints--;
-        }
+    public void speedUpgrade(){
+        if(!validatePoints()) return;
+        
+        PlayerMovement.speed *= 1.1f;
+        lvlPoints--;
+    }
+
+    private bool validatePoints(){
+        return lvlPoints > 0;
     }
 }
