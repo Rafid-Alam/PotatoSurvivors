@@ -7,7 +7,6 @@ TagManager:
   - Enemy1
   - Projectile1
   - Background
-  - obstacles
   layers:
   - Default
   - TransparentFX
