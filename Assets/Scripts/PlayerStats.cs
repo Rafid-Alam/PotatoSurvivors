@@ -29,10 +29,12 @@ public class PlayerStats : MonoBehaviour
     public static float level;
     public static int friesCollected;
     public static int brocCollected;
-    
+    public static float timeDiff;
+
     void Start()
     {
         score = 0;
+        timeDiff = 30;
         health = maxHealth;
         level = 1;
         enemiesKilled = 0;
@@ -55,8 +57,7 @@ public class PlayerStats : MonoBehaviour
         // Level up 
         if(playerXP >= xpNeeded){
             playerXP = playerXP - xpNeeded;
-            xpNeeded = xpNeeded * 1.15f; // xp needed is increased every level up
-            SpawnEnemy1.spawnCooldown *= 0.8f; // cooldown gets smaller every level up
+            xpNeeded = xpNeeded * 1.15f;
             level++;
 
             // Level up function
@@ -65,9 +66,17 @@ public class PlayerStats : MonoBehaviour
             LevelUp.lvlPoints++;
         }
 
+        // Difficulty increases over time
+        // spawn cooldown increases every 30 seconds
+        if(currentTime - timeDiff >= 0){
+            SpawnEnemy1.spawnCooldown *= 0.9f;
+            timeDiff += 30;
+        }
+
+
+
         // Updates time
         currentTime += Time.deltaTime;
-
         // Updates Player stats
         if(killCount != null) killCount.text = "x" + enemiesKilled;
         if(levelDisplay != null) levelDisplay.text = "LVL." + level;

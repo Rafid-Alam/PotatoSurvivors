@@ -6,13 +6,14 @@ public class SpawnEnemy1 : MonoBehaviour
 {
     private GameObject player;
     private float nextSpawnTime;
-    public static float spawnCooldown = 1.5f;
+    public static float spawnCooldown;
     //public GameObject Enemy1Prefab;
     public GameObject[] enemyPrefabs;
 
     void Start(){
         player = GameObject.Find("Hero");
         nextSpawnTime = 0;
+        spawnCooldown = 2f;
     }
 
     void Update(){
