@@ -89,8 +89,8 @@ public class LevelUp : MonoBehaviour
 
     public void healthUpgrade(){
         if(!validatePoints()) return;
-
-        PlayerStats.maxHealth *= 1.15f;
+        PlayerStats.upgradeMaxHealth();
+        
         lvlPoints--;
     }
 

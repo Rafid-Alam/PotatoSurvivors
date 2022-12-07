@@ -22,7 +22,7 @@ public class PlayerStats : MonoBehaviour
     private int score;
     public static int maxScore = 0;
     public static float maxHealth;
-    public float health;
+    public static float health;
     public static int enemiesKilled;
     public static float playerXP;
     public static float xpNeeded;
@@ -87,18 +87,22 @@ public class PlayerStats : MonoBehaviour
         if(timer != null) timer.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
         if(scoreLabel != null) scoreLabel.text = "Score: " + score;
         if(maxScoreLabel != null) maxScoreLabel.text = "Max Score: " + maxScore;
+        if(HealthBar != null) updateHealthBar();
     }
 
     public void damage(float damage){
         health -= damage;
-        HealthBar.SetHealth(health, maxHealth);
+        updateHealthBar();
 
         if(health <= 0){
             // updates max score and moves to gameover
             maxScore = Math.Max(maxScore, score);
             SceneManager.LoadScene("GameOver");
         }
+    }
 
+    public static void upgradeMaxHealth(){
+        maxHealth *= 1.15f;
     }
 
     void OnTriggerEnter2D(Collider2D col){
@@ -110,8 +114,16 @@ public class PlayerStats : MonoBehaviour
             health += 10;
             brocCollected++;
             if(health > maxHealth) health = maxHealth;
-            HealthBar.SetHealth(health,maxHealth);
+            updateHealthBar();
             Destroy(col.gameObject);
         }
+    }
+
+    void updateHealthBar(){
+        HealthBar.SetHealth(health,maxHealth);
+    }
+
+    void healing(){
+
     }
 }
