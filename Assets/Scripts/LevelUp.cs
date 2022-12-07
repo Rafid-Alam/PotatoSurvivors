@@ -34,7 +34,7 @@ public class LevelUp : MonoBehaviour
             leveled = false;
         }
         
-        if (Input.GetKeyDown(KeyCode.Escape) && LevelMenuActive){
+        if ((Input.GetKeyDown(KeyCode.Escape) && LevelMenuActive) || lvlPoints == 0){
             Resume();
             LevelMenuActive = false;
         }
@@ -73,10 +73,17 @@ public class LevelUp : MonoBehaviour
     }
 
     void healthUpgrade(){
+        PlayerStats.maxHealth *= 1.25f;
 
+        if(lvlPoints > 0){
+            lvlPoints--;
+        }
     }
 
     void speedUpgrade(){
-
+        PlayerMovement.speed *= 1.05f;
+        if(lvlPoints > 0){
+            lvlPoints--;
+        }
     }
 }

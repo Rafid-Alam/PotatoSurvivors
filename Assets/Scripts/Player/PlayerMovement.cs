@@ -10,8 +10,13 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
 
     public KeyCode jumpKey;
-    public float speed = 20f;
+    public static float speed;
     
+    void Start(){
+        speed = 20f;
+    }
+
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
