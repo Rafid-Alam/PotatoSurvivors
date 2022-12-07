@@ -57,20 +57,27 @@ public class LevelUp : MonoBehaviour
     // Handles different buttons to upgrade
     public void hatUpgrade(){
         if(!validatePoints()) return;
-
-
+        FireAutoProjectile.fireRate *= 0.8f;
+        AutoProjectileAim.damage *= 1.25f;
         lvlPoints--;
     }
 
     public void knifeUpgrade(){
         if(!validatePoints()) return;
+        SpawnKnife.knifeLevel++;
 
+        if(SpawnKnife.knifeLevel != 1){
+            SpawnKnife.timeToAttack *= 0.9f;
+            KnifeProjectile.damage *= 1.15f;
+        }
         lvlPoints--;
     }
 
     public void bombUpgrade(){  
         if(!validatePoints()) return;
+        SpawnBomb.bombLevel++;
 
+        if(SpawnBomb.bombLevel != 1)SpawnBomb.timeToAttack *= 0.85f;
         lvlPoints--;
     }
 
@@ -89,7 +96,7 @@ public class LevelUp : MonoBehaviour
 
     public void speedUpgrade(){
         if(!validatePoints()) return;
-        
+
         PlayerMovement.speed *= 1.1f;
         lvlPoints--;
     }

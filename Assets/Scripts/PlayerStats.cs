@@ -59,7 +59,7 @@ public class PlayerStats : MonoBehaviour
         // Level up 
         if(playerXP >= xpNeeded){
             playerXP = playerXP - xpNeeded;
-            xpNeeded = xpNeeded * 1.15f;
+            xpNeeded = xpNeeded * 1.1f;
             level++;
 
             // Level up function

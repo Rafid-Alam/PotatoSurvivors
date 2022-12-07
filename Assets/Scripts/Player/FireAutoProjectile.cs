@@ -5,12 +5,13 @@ using UnityEngine;
 public class FireAutoProjectile : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
-    public float fireRate = 1f;
+    public float fireRate;
     public float nextFire = 0f;
     //public static int projectiles; add to shoot multiple projectiles
 
     void Start()
     {
+        fireRate = 1f;
         nextFire = Time.time;
     }
 

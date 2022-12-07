@@ -8,11 +8,11 @@ public class KnifeProjectile : MonoBehaviour
     Rigidbody2D rb;
     Vector3 moveDirection;
     //GameObject target = null;
-    public static float damage = 20;
+    public static float damage;
     // Start is called before the first frame update
     void Start()
     {
-        //damage = 50f;
+        damage = 50f;
         rb = GetComponent<Rigidbody2D> ();
     }
 
@@ -24,15 +24,10 @@ public class KnifeProjectile : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D col){
         if(col.gameObject.tag.Equals("Enemy1")){
-            //Destroy (col.gameObject);
-            //col.GetComponent<EnemyStats>.damage(damage);
             EnemyStats enemy = col.transform.GetComponent<EnemyStats>();
             if(enemy != null){
                 enemy.damage(damage);
-                //if(!piercing)
                 Destroy(this.gameObject);
-            }else{
-                //Destroy (col.gameObject);
             }
         }
     }
@@ -57,9 +52,6 @@ public class KnifeProjectile : MonoBehaviour
                 transform.eulerAngles = newRotation;
         }
         else if(y != 0){
-            //Quaternion rotation = transform.rotation;
-            //rotation.y = 15 * y;
-            //transform.rotation = rotation;
             Vector3 newRotation = new Vector3(0,0,90*y);
             transform.eulerAngles = newRotation;
         }

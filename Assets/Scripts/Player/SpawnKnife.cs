@@ -5,26 +5,31 @@ using UnityEngine;
 public class SpawnKnife : MonoBehaviour
 {
 
-    [SerializeField] float timeToAttack = 1;
+    public static float timeToAttack;
+    public static int knifeLevel;
     [SerializeField] GameObject Knife;
     float timer;
     PlayerMovement playerMove;
     // Start is called before the first frame update
     void Start()
     {
+        knifeLevel = 1;
+        timeToAttack = 0.8f;
         playerMove = GetComponentInParent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(timer < timeToAttack){
-            timer += Time.deltaTime;
-            return;
-        }
+        if(knifeLevel != 0){
+            if(timer < timeToAttack){
+                timer += Time.deltaTime;
+                return;
+            }
 
-        timer = 0;
-        Spawn();
+            timer = 0;
+            Spawn();
+        }
     }
 
     private void Spawn(){
