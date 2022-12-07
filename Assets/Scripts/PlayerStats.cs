@@ -35,7 +35,8 @@ public class PlayerStats : MonoBehaviour
     {
         score = 0;
         timeDiff = 30;
-        health = maxHealth;
+        health = 100;
+        maxHealth = 100;
         level = 1;
         enemiesKilled = 0;
         playerXP = 0;

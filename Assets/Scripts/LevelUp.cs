@@ -16,12 +16,13 @@ public class LevelUp : MonoBehaviour
     public static int lvlPoints;
     [SerializeField] private TMP_Text pointsLabel;
     public static bool leveled = false;
+    public static bool LevelMenuActive;
     public GameObject LevelUpMenuUI;
-
     // Start is called before the first frame update
     void Start()
     {
         lvlPoints = 0;
+        LevelMenuActive = false;
     }
 
     // Update is called once per frame
@@ -29,8 +30,15 @@ public class LevelUp : MonoBehaviour
     {
         if(leveled){
             Pause();
+            LevelMenuActive = true;
             leveled = false;
         }
+        
+        if (Input.GetKeyDown(KeyCode.Escape) && LevelMenuActive){
+            Resume();
+            LevelMenuActive = false;
+        }
+
         pointsLabel.text = "Points: " + lvlPoints;
     }
 
@@ -44,5 +52,31 @@ public class LevelUp : MonoBehaviour
     {
         LevelUpMenuUI.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+
+    // Handles different buttons to upgrade
+    void hatUpgrade(){
+
+    }
+
+    void knifeUpgrade(){
+
+    }
+
+    void bombUpgrade(){
+
+    }
+
+    void healingUpgrade(){
+
+    }
+
+    void healthUpgrade(){
+
+    }
+
+    void speedUpgrade(){
+
     }
 }
