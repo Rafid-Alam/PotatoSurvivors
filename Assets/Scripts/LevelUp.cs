@@ -83,7 +83,7 @@ public class LevelUp : MonoBehaviour
 
     public void healingUpgrade(){
         if(!validatePoints()) return;
-
+        PlayerStats.healingLevel++;
         lvlPoints--;
     }
 

@@ -18,6 +18,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private TMP_Text maxScoreLabel;
     public Animator animator;
 
+    private int healCooldown;
     public float currentTime;
     private int score;
     public static int maxScore = 0;
@@ -30,9 +31,12 @@ public class PlayerStats : MonoBehaviour
     public static int friesCollected;
     public static int brocCollected;
     public static float timeDiff;
+    public static int healingLevel;
 
     void Start()
     {
+        healCooldown = 1;
+        healingLevel = 0;
         LevelUp.lvlPoints = 0;
         score = 0;
         timeDiff = 30;
@@ -76,6 +80,14 @@ public class PlayerStats : MonoBehaviour
         }
 
 
+        // Healing ability
+        if(healingLevel != 0){
+            if(Time.time >= healCooldown){
+                healCooldown=Mathf.FloorToInt(Time.time)+1;
+                healing();
+            }   
+        }
+        
 
         // Updates time
         currentTime += Time.deltaTime;
@@ -124,6 +136,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     void healing(){
-
+        health += 0.5f * healingLevel;
+        if(health > maxHealth) health = maxHealth;
     }
 }
