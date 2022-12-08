@@ -136,7 +136,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     void healing(){
-        health += 0.5f * healingLevel;
+        health += 0.25f * healingLevel;
         if(health > maxHealth) health = maxHealth;
     }
 }
