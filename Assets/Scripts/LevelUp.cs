@@ -77,7 +77,10 @@ public class LevelUp : MonoBehaviour
         if(!validatePoints()) return;
         SpawnBomb.bombLevel++;
 
-        if(SpawnBomb.bombLevel != 1)SpawnBomb.timeToAttack *= 0.85f;
+        if(SpawnBomb.bombLevel != 1){
+            BombObject.range += 5;
+            SpawnBomb.timeToAttack *= 0.95f;
+        }
         lvlPoints--;
     }
 
