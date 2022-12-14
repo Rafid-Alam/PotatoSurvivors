@@ -31,7 +31,7 @@ public class BombObject : MonoBehaviour
             //col.GetComponent<EnemyStats>.damage(damage);
             EnemyStats enemy = col.transform.GetComponent<EnemyStats>();
             var enemies = GameObject.FindGameObjectsWithTag("Enemy1");
-            Debug.Log("Enemies found: " + enemies.Length);
+            //Debug.Log("Enemies found: " + enemies.Length);
             if(enemy != null){
                 //Debug.Log("Enemie Collision");
                 //enemy.damage(damage);
@@ -43,9 +43,9 @@ public class BombObject : MonoBehaviour
                         EnemyStats obj2 = obj.transform.GetComponent<EnemyStats>();
                         if(obj2 != null){
                             obj2.damage(damage);
-                            Debug.Log("Damaged: " + obj2.name + "at:" + obj2.transform.position.x);
+                            //Debug.Log("Damaged: " + obj2.name + "at:" + obj2.transform.position.x);
                         }else{
-                            Debug.Log("enemy is null");
+                            //Debug.Log("enemy is null");
                         }
                     }
                 }
