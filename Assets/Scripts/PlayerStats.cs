@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private TMP_Text timer;
     [SerializeField] private TMP_Text scoreLabel;
     [SerializeField] private TMP_Text maxScoreLabel;
-    public Animator animator;
+    public Animator anim;
 
     private int healCooldown;
     public float currentTime;
@@ -35,6 +35,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         healCooldown = 1;
         healingLevel = 0;
         LevelUp.lvlPoints = 0;
@@ -102,6 +103,13 @@ public class PlayerStats : MonoBehaviour
         if(HealthBar != null) updateHealthBar();
     }
 
+    IEnumerator TimerForHeroDeath() // this code shows hero death animation before loading "Game Over" scene
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        SceneManager.LoadScene("GameOver");
+    }
+
     public void damage(float damage){
         health -= damage;
         updateHealthBar();
@@ -109,7 +117,8 @@ public class PlayerStats : MonoBehaviour
         if(health <= 0){
             // updates max score and moves to gameover
             maxScore = Math.Max(maxScore, score);
-            SceneManager.LoadScene("GameOver");
+            anim.Play("hero_death");
+            StartCoroutine(TimerForHeroDeath());
         }
     }
 

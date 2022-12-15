@@ -13,7 +13,7 @@ public class SpawnEnemy1 : MonoBehaviour
     void Start(){
         player = GameObject.Find("Hero");
         nextSpawnTime = 0;
-        spawnCooldown = 2f;
+        spawnCooldown = 1.7f;
     }
 
     void Update(){
