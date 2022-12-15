@@ -453,7 +453,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.8}
+  m_Offset: {x: 0, y: 0.51}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.1}
@@ -464,7 +464,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5}
+  m_Size: {x: 0.81, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &624247068
 Rigidbody2D:
@@ -628,9 +628,8 @@ MonoBehaviour:
   timer: {fileID: 699177170}
   scoreLabel: {fileID: 0}
   maxScoreLabel: {fileID: 0}
-  animator: {fileID: 0}
+  anim: {fileID: 0}
   currentTime: 0
-  health: 100
 --- !u!1 &690697680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,9 +1381,8 @@ MonoBehaviour:
   timer: {fileID: 699177170}
   scoreLabel: {fileID: 690697682}
   maxScoreLabel: {fileID: 1206568754}
-  animator: {fileID: 0}
+  anim: {fileID: 0}
   currentTime: 0
-  health: 100
 --- !u!1 &1019885492
 GameObject:
   m_ObjectHideFlags: 0
