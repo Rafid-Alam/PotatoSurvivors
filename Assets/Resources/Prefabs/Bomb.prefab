@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6741232376081204730}
   - component: {fileID: -1287272304822073482}
   - component: {fileID: -5099123174229950170}
+  - component: {fileID: 7648478956990784958}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Projectile1
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b29618aa3d51540bdde604c630dafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 7648478956990784958}
 --- !u!50 &-1287272304822073482
 Rigidbody2D:
   serializedVersion: 4
@@ -146,3 +148,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &7648478956990784958
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357139343179419001}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b7e93e2886eef74cb897b6a5412e8f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

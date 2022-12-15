@@ -13,10 +13,13 @@ public class BombObject : MonoBehaviour
     public static float range = 25;
     // Start is called before the first frame update
     // Start is called before the first frame update
+    private Animator anim;
+
     void Start()
     {
         //damage = 50f;
         rb = GetComponent<Rigidbody2D> ();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,13 +53,15 @@ public class BombObject : MonoBehaviour
                     }
                 }
                 //if(!piercing)
-                Destroy(this.gameObject);
+                anim.Play("bomb_explode");
+                Destroy(this.gameObject, 0.5f);
             }else{
                 //Destroy (col.gameObject);
             }
         }
     }
 
+    
     void OnBecameInvisible(){
         Destroy(this.gameObject);
     }
